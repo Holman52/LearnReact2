@@ -6,7 +6,7 @@ import  "./MainHeader.scss";
 const MainHeader = (props) => {
   return (
     <header className="main-header">
-      <h1>React Advanced</h1>
+      <h1>Ract</h1>
       <Navigation
         isLoggedIn={props.isAuthenticated}
         onLogout={props.onLogout}
