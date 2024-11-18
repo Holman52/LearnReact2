@@ -1,11 +1,11 @@
 import React from "react";
 
 import Card from "../UI/Card/Card";
-import styles from "./Home.module.css";
+import  "./Home.scss";
 
 const Home = (props) => {
   return (
-    <Card className={styles.home}>
+    <Card className="home">
       <h1>Рады Вас Видеть Снова!</h1>
     </Card>
   );

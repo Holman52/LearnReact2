@@ -1,11 +1,11 @@
 import React from "react";
 
 import Navigation from "./Navigation";
-import styles from "./MainHeader.module.css";
+import  "./MainHeader.scss";
 
 const MainHeader = (props) => {
   return (
-    <header className={styles["main-header"]}>
+    <header className="main-header">
       <h1>React Advanced</h1>
       <Navigation
         isLoggedIn={props.isAuthenticated}
