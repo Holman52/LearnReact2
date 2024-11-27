@@ -23,26 +23,40 @@ const emailReducer = (prevState, action) => {
   }
   }
 
-
+const passwordReducer = (prevState, action) =>{
+  if (action.type === "USER_INPUT"){
+    return {
+    value: action.value,
+    isValid: action.value.trim().length > 7
+    }
+  };
+  if (action.type === "INPUT_VALID"){
+    return{
+      value: prevState.value,
+      isValid: prevState.value.trim().length > 7
+    }
+  };
+  return {
+    value: '',
+    isValid: false
+  }
+}
 
 const Login = (props) => {
-  const [inputPassword, setInputPassword] = useState("");
-  const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
-
-
+  const [statePassword, dispatchStatePassword] = useReducer(passwordReducer, {value: '' , isValid: false})
   const [EmailInput,dispatchEmailInput] = useReducer(emailReducer, {value: '' , isValid: false})
 
   const emailChangeHandler = (event) => {
     dispatchEmailInput({type: "USER_INPUT", value: event.target.value});
 
     setFormIsValid(
-      event.target.value.includes("@") && inputPassword.trim().length > 7
+      event.target.value.includes("@") && statePassword.value
     );
   };
 
   const passwordChangeHandler = (event) => {
-    setInputPassword(event.target.value);
+    dispatchStatePassword({type: "USER_INPUT" , value: event.target.value});
 
     setFormIsValid(
       event.target.value.trim().length > 6 && EmailInput.isValid
@@ -54,12 +68,12 @@ const Login = (props) => {
   };
 
   const validatePasswordHandler = () => {
-    setPasswordIsValid(inputPassword.trim().length > 6);
+    dispatchEmailInput({type: "INPUT_VALID"});
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(EmailInput.value, inputPassword);
+    props.onLogin(EmailInput.value, statePassword.value);
   };
 
   return (
@@ -81,14 +95,14 @@ const Login = (props) => {
         </div>
         <div
           className={`${"control"} ${
-            passwordIsValid === false ? "invalid" : ""
+            statePassword.isValid === false ? "invalid" : ""
           }`}
         >
           <label htmlFor="password">Пароль</label>
           <input
             type="password"
             id="password"
-            value={inputPassword}
+            value={statePassword.value}
             onChange={passwordChangeHandler}
             onBlur={validatePasswordHandler}
           />
