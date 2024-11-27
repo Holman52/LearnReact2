@@ -32,7 +32,7 @@ function App() {
     <div className="container">
       <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
       <main>
-        {!isLoggedIn && <Login onLogin={loginHandler} useEffect={loginHandler}/>}
+        {!isLoggedIn && <Login onLogin={loginHandler}/>}
         {isLoggedIn && <Home onLogout={logoutHandler} />}
       </main>
     </div>
