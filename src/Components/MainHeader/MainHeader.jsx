@@ -8,7 +8,6 @@ const MainHeader = (props) => {
     <header className="main-header">
       <h1>Ract</h1>
       <Navigation
-        isLoggedIn={props.isAuthenticated}
         onLogout={props.onLogout}
       />
     </header>

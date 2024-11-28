@@ -1,29 +1,34 @@
 import React from "react";
 
 import  "./Navigation.scss";
+import ContextLog from "../../context/contextlog";
 
 const Navigation = (props) => {
-  return (
+  <ContextLog.Consumer>
+      {(ctx) => {
+        return(
     <nav className="nav">
       <ul>
-        {props.isLoggedIn && (
+        {ctx.isLoggedIn && (
           <li>
             <a href="/">Пользователи</a>
           </li>
         )}
-        {props.isLoggedIn && (
+        {ctx.isLoggedIn && (
           <li>
             <a href="/">Админ</a>
           </li>
         )}
-        {props.isLoggedIn && (
+        {ctx.isLoggedIn && (
           <li>
             <button onClick={props.onLogout}>Выйти</button>
           </li>
         )}
       </ul>
     </nav>
-  );
+      );
+    }}
+  </ContextLog.Consumer>
 };
 
 export default Navigation;

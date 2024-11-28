@@ -3,6 +3,7 @@ import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import MainHeader from "./Components/MainHeader/MainHeader";
 import "./App.scss"
+import ContextLog from "./context/contextlog";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,13 +30,18 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
-      <main>
-        {!isLoggedIn && <Login onLogin={loginHandler}/>}
-        {isLoggedIn && <Home onLogout={logoutHandler} />}
-      </main>
-    </div>
+    <ContextLog.Provider 
+      value={{
+        isLoggedIn: isLoggedIn,
+    }}>
+      <div className="container">
+        <MainHeader  onLogout={logoutHandler} />
+        <main>
+          {!isLoggedIn && <Login onLogin={loginHandler}/>}
+          {isLoggedIn && <Home onLogout={logoutHandler} />}
+        </main>
+      </div>
+    </ContextLog.Provider>
   );
 }
 
