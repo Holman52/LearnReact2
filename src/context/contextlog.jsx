@@ -1,7 +1,8 @@
 import React from "react";
 
 const ContextLog = React.createContext({
-    isLoggedIn: false
+    isLoggedIn: false,
+    onLogout: true
 })
 
 export default ContextLog

@@ -4,27 +4,32 @@ import  "./Navigation.scss";
 import ContextLog from "../../context/Contextlog";
 
 const Navigation = (props) => {
-  const ctx = useContext(ContextLog)
+  const context = useContext(ContextLog)
+  // <ContextLog.Consumer>
+  //     {(context) => {
         return(
     <nav className="nav">
       <ul>
-        {ctx.isLoggedIn && (
+        {context.isLoggedIn && (
           <li>
             <a href="/">Пользователи</a>
           </li>
         )}
-        {ctx.isLoggedIn && (
+        {context.isLoggedIn && (
           <li>
             <a href="/">Админ</a>
           </li>
         )}
-        {ctx.isLoggedIn && (
+        {context.isLoggedIn && (
           <li>
-            <button onClick={props.onLogout}>Выйти</button>
+            <button onClick={context.onLogout}>Выйти</button>
           </li>
         )}
       </ul>
     </nav>
       );
-    }
+  //   }}
+  // </ContextLog.Consumer>
+};
+
 export default Navigation;

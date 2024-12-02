@@ -33,6 +33,7 @@ function App() {
     <ContextLog.Provider 
       value={{
         isLoggedIn: isLoggedIn,
+        onLogout: logoutHandler 
     }}>
       <div className="container">
         <MainHeader  onLogout={logoutHandler} />
