@@ -3,7 +3,8 @@ import React, { useState, useReducer, useContext } from "react";
 import Card from "../UI/Card/Card";
 import  "./Login.scss";
 import Button from "../UI/Button/But";
-import ContextLog from "../../context/ContextLog";
+import ContextLog from "../../context/Contexlog";
+
 
 
 const emailReducer = (prevState, action) => {

@@ -3,7 +3,8 @@ import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import MainHeader from "./Components/MainHeader/MainHeader";
 import "./App.scss"
-import ContextLog from "./context/ContextLog";
+import ContextLog from "./context/Contexlog";
+
 
 
 function App() {

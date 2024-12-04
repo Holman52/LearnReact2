@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
 
 import  "./Navigation.scss";
-import ContextLog from "../../context/ContextLog";
+import ContextLog from "../../context/Contexlog";
+
 
 
 const Navigation = (props) => {
