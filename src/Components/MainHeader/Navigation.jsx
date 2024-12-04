@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
 
 import  "./Navigation.scss";
-import ContextLog from "../../context/Contextlog";
+import ContextLog from "../../context/ContextLog";
+
 
 const Navigation = (props) => {
   const context = useContext(ContextLog)
@@ -28,8 +29,6 @@ const Navigation = (props) => {
       </ul>
     </nav>
       );
-  //   }}
-  // </ContextLog.Consumer>
 };
 
 export default Navigation;

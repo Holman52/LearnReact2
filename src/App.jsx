@@ -1,49 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, {useContext} from "react";
 import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import MainHeader from "./Components/MainHeader/MainHeader";
 import "./App.scss"
-import ContextLog from "./context/Contextlog";
+import ContextLog from "./context/ContextLog";
+
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   
-  useEffect(() => {
+  // useEffect(() => {
     
-    const local = localStorage.getItem("user")
-    if (local === 'пользователь зарегистрирован'){
-      setIsLoggedIn(true)
-    }
+  //   const local = localStorage.getItem("user")
+  //   if (local === 'пользователь зарегистрирован'){
+  //     setIsLoggedIn(true)
+  //   }
 
-  }, []);
+  // }, []);
   
-  const loginHandler = (email, password) => {
-    localStorage.setItem("user" , "пользователь зарегистрирован")
-    setIsLoggedIn(true);
+  // const loginHandler = (email, password) => {
+  //   localStorage.setItem("user" , "пользователь зарегистрирован")
+  //   setIsLoggedIn(true);
 
-  };
+  // };
 
-  const logoutHandler = () => {
-    localStorage.removeItem('user' , 'пользователь зарегистрирован')
-    setIsLoggedIn(false);
-  };
-
+  // const logoutHandler = () => {
+  //   localStorage.removeItem('user' , 'пользователь зарегистрирован')
+  //   setIsLoggedIn(false);
+  // };
+  const context = useContext(ContextLog)
   return (
-    <ContextLog.Provider 
-      value={{
-        isLoggedIn: isLoggedIn,
-        onLogout: logoutHandler 
-    }}>
+    <React.Fragment>
       <div className="container">
-        <MainHeader  onLogout={logoutHandler} />
+        <MainHeader />
         <main>
-          {!isLoggedIn && <Login onLogin={loginHandler}/>}
-          {isLoggedIn && <Home onLogout={logoutHandler} />}
+          {!context.isLoggedIn && <Login />}
+          {context.isLoggedIn && <Home  />}
         </main>
       </div>
-    </ContextLog.Provider>
-  );
-}
+    </React.Fragment>
+)}
 
 export default App;
