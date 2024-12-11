@@ -2,14 +2,20 @@ import React from "react";
 
 import Navigation from "./Navigation";
 import  "./MainHeader.scss";
+import Banner from "./Banner";
 
-const MainHeader = (props) => {
+
+const MainHeader = () => {
+
   return (
+    <React.Fragment>
     <header className="main-header">
-      <h1>Ract</h1>
-      <Navigation
-      />
+       <Navigation />
     </header>
+    <main className="advertising">
+       <Banner/>
+    </main>
+    </React.Fragment>
   );
 };
 

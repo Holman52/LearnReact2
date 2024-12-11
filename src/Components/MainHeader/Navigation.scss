@@ -1,38 +1,88 @@
 
   .nav{
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      li {
-        margin: 0;
-        margin-left: 3rem;
-          a {
-            text-decoration: none;
-            color: white;
-            a:hover, a:active{
-              color: #b1c4db;
-          }
-        }
-      }
-    }
-    button {
-      font: inherit;
-      background: #0dd6dd;
-      border: 1px solid #066d70;
-      padding: 0.5rem 1.5rem;
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
-      border-radius: 20px;
-        button:focus {
-         outline: none;
-           button:hover, button:active {
-            color: #0649a0;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-         }
-      }
-    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
+  .navigation__logo {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+.logo__icon {
+    width: 32px;
+    height: 32px;
+    // background-image: url(logo.png);
+}
+.logo__text {
+    font-size: 15px;
+    width: 50px;
+}
+.navigation__search {
+    display: flex;
+    gap: 10px;
+    border: 1px solid #D9D9D9;
+    width: 70%;
+    align-items:center ;
+    padding: 9px;
+}
+.icon-home{
+    // background-image: url(icon-home.png);
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+}
+input{
+    font-size: 16px;
+    border: none;
+    width: 100%;
+}
+
+.servis {
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+  
+}
+.login__button {
+    background: #1890FF;
+    border-radius: 2px;
+    padding: 10px;
+    border: none;
+    color: white;
+    display: flex;
+    gap: 10px;
+}
+button{
+    border-radius: 2px;
+    padding: 10px;
+    border: none;  
+}
+.user-icon {
+    // background-image: url(user-icon.png);
+    width: 12px;
+    height: 12px;
+}
+.login-user {
+  align-items: center;
+}
+a{
+    text-decoration: none;
+}
+.login__buy {
+    background-color: white;
+    color: black;
+    border: 1px solid #D9D9D9;
+    display: flex;
+    gap: 10px;
+}
+.buy-icon {
+  // background-image: url(buy-icon.png);
+  width: 14px;
+  height: 12px;
+  background-size: contain;
+}
+.buy-text {
+  text-align: center;
+}
