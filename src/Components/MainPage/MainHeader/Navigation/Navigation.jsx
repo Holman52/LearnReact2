@@ -1,10 +1,9 @@
 import React, {useContext} from "react";
-import ContextLog from "../../context/Contexlog";
+import ContextLog from "../../../../context/Contexlog";
 import './Navigation.scss'
-import buy from '../../img/buy.png'
-import logo from '../../img/logo.png'
-import user from '../../img/user.png'
-
+import buy from '../../../../img/buy.svg'
+import logo from '../../../../img/logo.png'
+import user from '../../../../img/user.svg'
 
 const Navigation = (props) => {
    const ctx = useContext(ContextLog)

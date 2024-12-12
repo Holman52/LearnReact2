@@ -1,8 +1,10 @@
 import React from "react";
 
-import Navigation from "./Navigation";
+
 import  "./MainHeader.scss";
-import Banner from "./Banner";
+
+import Navigation from "../Navigation/Navigation";
+import Banner from "../Banner/Banner";
 
 
 const MainHeader = () => {

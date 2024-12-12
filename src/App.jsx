@@ -1,9 +1,10 @@
 import React, {useContext} from "react";
 import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
-import MainHeader from "./Components/MainHeader/MainHeader";
+
 import "./App.scss"
 import ContextLog from "./context/Contexlog";
+import MainHeader from "./Components/MainPage/MainHeader/MainHeader/MainHeader";
 
 
 
