@@ -1,0 +1,61 @@
+.img_food {
+    height: 25vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.text-food{
+    padding: 2% 5% 5% 5%
+}
+.delivery {
+    display: flex;
+    justify-content: space-between;
+ 
+}
+.food-header{
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+.time {
+    width: 57px;
+    border-radius: 2px;
+    color: white;
+    background: #262626;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 2%;
+}
+.desc {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+.icon-star {
+    background-image: url(star.png);
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+}
+.desc-reyt{
+    display: flex;
+    color: #FFC107;
+    font-size: 18px;
+    font-weight: 700;
+    gap: 5px;
+}
+.flex-food{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    color: #8C8C8C;
+    font-size: 18px;
+    align-items: center;
+
+}
+.point {
+    height: 5px;
+    width: 5px;
+    border-radius: 100%;
+    background-color: #8C8C8C;
+}
