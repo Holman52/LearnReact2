@@ -1,3 +1,4 @@
+
 .img_food {
     height: 25vh;
     width: 100%;
@@ -32,7 +33,7 @@
     margin-top: 20px;
 }
 .icon-star {
-    background-image: url(star.png);
+    background-image: url(../../../../../public/star.svg);
     width: 15px;
     height: 15px;
     background-size: contain;
@@ -44,8 +45,11 @@
     font-weight: 700;
     gap: 5px;
 }
+// .price{
+//     text;
+// }
 .flex-food{
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     color: #8C8C8C;

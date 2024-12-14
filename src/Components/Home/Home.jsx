@@ -6,7 +6,7 @@ import  "./Home.scss";
 const Home = () => {
   return (
     <Card >
-      <h1>это суши магазин</h1>
+    
     </Card>
   );
 };

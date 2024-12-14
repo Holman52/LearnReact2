@@ -5,17 +5,82 @@ import  "./MainHeader.scss";
 
 import Navigation from "../Navigation/Navigation";
 import Banner from "../Banner/Banner";
+import CardProductInfo from "../ProductCard/CardProductInfo";
 
 
-const MainHeader = () => {
+const MainHeader = (props) => {
+  const DataProduct = [
+    {
+        url: '/img_a.jpg',
+        id:"c1",
+        name: "Пицца плюс",
+        time: 50,
+        grade: 4.5,
+        price: 900,
+    },
+    {
+        url: '/img_b.jpg',
+        id:"c2",
+        name: "Тануки",
+        time: 45,
+        grade: 4.4,
+        price: 600,
+    },
+    {
+        url: '/img_c.jpg',
+        id:"c3",
+        name: "FoodBand",
+        time: 50,
+        grade: 4.6,
+        price: 750,
+    },
+    {
+        url: '/img_d.jpg',
+        id:"c4",
+        name: "Жадина-пицца",
+        time: 50,
+        grade: 4.5,
+        price: 900,
+    },
+    {
+        url: '/img_f.png',
+        id:"c5",
+        name: "Точка еды",
+        time: 60,
+        grade: 4.8,
+        price: 1100,
+    },
+    {
+        url: '/img_g.png',
+        id:"c6",
+        name: "PizzaBurger",
+        time: 40,
+        grade: 4.3,
+        price: 800,
+    }
+]
 
   return (
     <React.Fragment>
     <header className="main-header">
        <Navigation />
     </header>
-    <main className="advertising">
+    <section className="advertising">
        <Banner/>
+    </section>
+    <main>
+      <ul className="content">
+        {DataProduct.map((DataProduct) => (
+          <CardProductInfo 
+            key={DataProduct.id}
+            time={DataProduct.time}
+            name={DataProduct.name}
+            grade={DataProduct.grade}
+            price={DataProduct.price}
+            url={DataProduct.url}
+          ></CardProductInfo>
+        ))}
+      </ul>
     </main>
     </React.Fragment>
   );
