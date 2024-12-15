@@ -111,7 +111,7 @@ const Login = (props) => {
           />
         </div>
         <div className="actions">
-          <Button type="submit" className="btn" disabled={!formIsValid}>
+          <Button type="submit" className="btn-login" disabled={!formIsValid}>
             Вход
           </Button>
         </div>

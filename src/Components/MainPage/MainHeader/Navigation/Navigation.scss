@@ -56,11 +56,7 @@ input{
     display: flex;
     gap: 10px;
 }
-button{
-    border-radius: 2px;
-    padding: 10px;
-    border: none;  
-}
+
 .user-icon {
     // background-image: url(user-icon.png);
     width: 12px;
@@ -78,6 +74,7 @@ a{
     border: 1px solid #D9D9D9;
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 .buy-icon {
   // background-image: url(buy-icon.png);

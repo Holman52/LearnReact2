@@ -1,4 +1,21 @@
-
+.card-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.buy-btn {
+    background: #1890FF;
+    border-radius: 2px;
+    padding: 0;
+    border: none;
+    color: white;
+    display: flex;
+    gap: 10px;
+    padding: 6px;
+    font-size: 16px;
+    white-space: nowrap;
+}
 .img_food {
     height: 25vh;
     width: 100%;
@@ -44,6 +61,7 @@
     font-size: 18px;
     font-weight: 700;
     gap: 5px;
+    align-items: center;
 }
 // .price{
 //     text;
