@@ -35,11 +35,8 @@ function App() {
   return (
     <React.Fragment>
       <div className="container">
-       {context.isLoggedIn && <MainHeader />}
-        <main>
           {!context.isLoggedIn && <Login />}
           {context.isLoggedIn && <Home  />}
-        </main>
       </div>
     </React.Fragment>
 )}

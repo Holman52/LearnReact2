@@ -6,6 +6,7 @@ import  "./MainHeader.scss";
 import Navigation from "../Navigation/Navigation";
 import Banner from "../Banner/Banner";
 import CardProductInfo from "../ProductCard/CardProductInfo";
+import FooterMain from "../Footer/FooterMain";
 
 
 const MainHeader = (props) => {
@@ -82,6 +83,9 @@ const MainHeader = (props) => {
         ))}
       </ul>
     </main>
+    <footer>
+      <FooterMain></FooterMain>
+    </footer>
     </React.Fragment>
   );
 };

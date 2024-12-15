@@ -1,13 +1,14 @@
-import React, {useContext} from "react";
+import React from "react";
 
-import Card from "../UI/Card/Card";
+
 import  "./Home.scss";
+import MainHeader from "../MainPage/MainHeader/MainHeader/MainHeader";
 
 const Home = () => {
   return (
-    <Card >
-    
-    </Card>
+    <React.Fragment>
+      <MainHeader></MainHeader>
+    </React.Fragment>
   );
 };
  

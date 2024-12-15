@@ -1,0 +1,46 @@
+.size{
+    width: 35px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat ;
+}
+.mes{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    .face{
+        background-image: url(../../../../../public/facebook.svg);
+    }
+    .vk{
+        background-image: url(../../../../../public/vk.svg);
+    }
+    .inst{
+        background-image: url(../../../../../public/insta.svg);
+    }
+}
+.footer__desc{
+    display: flex;
+    gap: 10px;
+    width: 80%;
+    align-items:center ;
+}
+.navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.navigation__logo {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+.logo__icon {
+    width: 32px;
+    height: 32px;
+    background-image: url(../../../../../public/logo.png);
+}
+.logo__text {
+    font-size: 15px;
+    width: 50px;
+}

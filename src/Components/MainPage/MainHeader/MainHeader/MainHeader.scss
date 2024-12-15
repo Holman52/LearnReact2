@@ -13,4 +13,10 @@
     flex-wrap: wrap;
     gap: 50px; 
 }
-  
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    gap: 20px;
+}
