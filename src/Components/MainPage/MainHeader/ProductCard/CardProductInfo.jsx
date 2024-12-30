@@ -21,7 +21,7 @@ const CardProductInfo = (props) =>{
                                 <div className="point"></div>
                                 <div className="food">Пицца</div>
                             </div>
-                            <Button className="buy-btn">
+                            <Button className="buy-btn" onClick="onClickButtonBuy">
                                 В корзину
                             </Button> 
                         </div>

@@ -4,7 +4,7 @@ import Home from "./Components/Home/Home";
 
 import "./App.scss"
 import ContextLog from "./context/Contexlog";
-import MainHeader from "./Components/MainPage/MainHeader/MainHeader/MainHeader";
+
 
 
 
