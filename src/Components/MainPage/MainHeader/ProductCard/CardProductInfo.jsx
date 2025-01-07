@@ -23,9 +23,9 @@ const CardProductInfo = (props) =>{
                                 <div className="food">Пицца</div>
                             </div>
                             <ProductQuantity/>
-                            <Button className="buy-btn" onClick="onClickButtonBuy">
+                            {/* <Button className="buy-btn" onClick="onClickButtonBuy">
                                 В корзину
-                            </Button> 
+                            </Button>  */}
                         </div>
                     </div>
         </CardProduct>
