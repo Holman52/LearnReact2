@@ -1,4 +1,4 @@
-import Button from "../../../UI/Button/But";
+// import Button from "../../../UI/Button/But";
 import CardProduct from "../../../UI/Card/CardProduct";
 import "./CardProductInfo.scss";
 import ProductQuantity from "./ProductQuantity/ProductQuantity";
@@ -6,7 +6,7 @@ import ProductQuantity from "./ProductQuantity/ProductQuantity";
 const CardProductInfo = (props) =>{
    return (<div className="card-product">
         <CardProduct>
-            <div className="img_food"><img src={props.url} alt={props.key} classNameName="img_food"/></div>
+            <div className="img_food"><img src={props.url} alt={props.id} className="img_food"/></div>
                     <div className="text-food">
                         <div className="delivery">
                             <div className="food-header">{props.name}</div>
@@ -22,7 +22,7 @@ const CardProductInfo = (props) =>{
                                 <div className="point"></div>
                                 <div className="food">Пицца</div>
                             </div>
-                            <ProductQuantity/>
+                            <ProductQuantity id={props.id}/>
                             {/* <Button className="buy-btn" onClick="onClickButtonBuy">
                                 В корзину
                             </Button>  */}

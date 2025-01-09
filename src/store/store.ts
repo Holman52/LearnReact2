@@ -16,23 +16,25 @@ type Action = IncrementAction | DecrementAction
 
 const initialState: State = {
   value: 1
-}
+};
 
-const reducer = (state = initialState,action: Action): State => {
+const reducer = (State = initialState,action: Action): State => {
   switch(action.type){
     case 'increment':
       return{
-        value: state.value + 1
+        value: State.value + 1
       };
     case 'decrement':
     return{
-      value: state.value - 1
+      value: State.value - 1
     };
     default:
-      return state
+      return State
   }
-} 
+};
 
-export default configureStore({
+const store = configureStore({
   reducer: reducer,
 })
+console.log(store)
+export default store
