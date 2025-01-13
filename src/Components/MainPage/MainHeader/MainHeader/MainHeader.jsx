@@ -73,7 +73,7 @@ const MainHeader = (props) => {
       <ul className="content">
         {DataProduct.map((DataProduct) => (
           <CardProductInfo 
-            key={DataProduct.id}
+            id={DataProduct.id}
             time={DataProduct.time}
             name={DataProduct.name}
             grade={DataProduct.grade}
