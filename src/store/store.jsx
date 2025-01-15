@@ -37,7 +37,7 @@ import { configureStore, createAction, createReducer } from '@reduxjs/toolkit'
 //   reducer: reducer,
 // }
 
-export const incrementAction = createAction('value/IncrementAction')
+export const incrementAction = createAction('value/incrementAction')
 export const decrementAction = createAction('value/decrementAction')
 
 const initialState = { value: 0 }
