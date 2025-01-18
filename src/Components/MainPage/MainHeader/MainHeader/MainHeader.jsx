@@ -73,8 +73,8 @@ console.log(DataProduct)
     </section>
     <main>
       <ul className="content">
-        {DataProduct.map((DataProduct) => (
-          <CardProductInfo 
+        {DataProduct.map((Product) => (
+          <CardProductInfo id={Product.id}
 
           ></CardProductInfo>
         ))}

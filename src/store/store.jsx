@@ -120,7 +120,7 @@ const productSlice = createSlice({
 
 export const store = configureStore({
   reducer: {
-    value: productSlice
+    products: productSlice
   }
 })
 

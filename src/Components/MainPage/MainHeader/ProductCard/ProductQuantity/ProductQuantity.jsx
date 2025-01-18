@@ -13,13 +13,13 @@ const ProductQuantity = (props) =>{
     //         update()
     //     })
     // },[])
-    const value = useSelector(state=> state.value)
+    const value = useSelector((state) => state.products.products)
     const dispatch = useDispatch()
     console.log(value)
    return (<div>
         <div>Количество</div>
         <form>
-            <input type="input" id={props.id} value={value.value}></input>
+            <input type="input" id={props.id} value={value.count}></input>
             <Button onClick={() => dispatch(decrement(props.id))}>-</Button>
             <Button onClick={() => dispatch(increment(props.id))}>+</Button>
         </form>
