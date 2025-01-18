@@ -34,10 +34,12 @@ import { configureStore, createAction, createReducer , createSlice} from '@redux
 // } 
 
 // export default configureStore({
-//   reducer: reducer,
-// }
-const initialState = {
- products:[{
+  //   reducer: reducer,
+  // }
+  // export const incrementAction = createAction('value/incrementAction')
+  // export const decrementAction = createAction('value/decrementAction')
+const initialState = [
+    {
       url: '/img_a.jpg',
       id:"c1",
       name: "Пицца плюс",
@@ -91,11 +93,8 @@ const initialState = {
       price: 800,
       count: 0,
   },
-  ]
-}
+]
 
-// export const incrementAction = createAction('value/incrementAction')
-// export const decrementAction = createAction('value/decrementAction')
 
 
 const productSlice = createSlice({
@@ -103,15 +102,15 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     increment: (state, action) => {
-      const product = state.products.find(p => p.id === action.payload);
+      const product = state.find(p => p.id === action.payload);
       if (product) {
-        product.count += 1;
+        product.count ++;
       }
     },
     decrement: (state, action) => {
-      const product = state.products.find(p => p.id === action.payload);
-      if (product && product.count > 0) {
-        product.count -= 1;
+      const product = state.find(p => p.id === action.payload);
+      if (product) {
+        state.count --
       }
     },
   },
@@ -119,11 +118,12 @@ const productSlice = createSlice({
 
 export const store = configureStore({
   reducer: {
-    products: productSlice
+    products: productSlice.reducer
   }
 })
 
 export const { increment, decrement } = productSlice.actions;
+
 
 
 

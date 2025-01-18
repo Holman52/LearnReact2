@@ -5,7 +5,7 @@ import "./CardProductInfo.scss";
 import ProductQuantity from "./ProductQuantity/ProductQuantity";
 
 const CardProductInfo = () =>{
-    const DataProduct = useSelector((state) => state.products.products)
+const DataProduct = useSelector((state) => state.products)
    return (<div className="card-product">
         <CardProduct>
             <div className="img_food"><img src={DataProduct.url} alt={DataProduct.id} className="img_food"/></div>

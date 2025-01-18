@@ -61,7 +61,7 @@ const MainHeader = (props) => {
 //         price: 800,
 //     }
 // ]
-const DataProduct = useSelector((state) => state.products.products)
+const DataProduct = useSelector((state) => state.products)
 
   return (
     <React.Fragment>

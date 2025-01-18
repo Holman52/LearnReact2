@@ -13,13 +13,10 @@ const ProductQuantity = (props) =>{
     //         update()
     //     })
     // },[])
-    const product = useSelector((state) => state.products.products)
+    const product = useSelector((state) => state.products)
+    console.log(product)
     const dispatch = useDispatch()
-    if (product) {
-        console.log(product);
-    } else {
-        console.log('data или products не определены');
-    }
+  
    return (<div>
         <div>Количество</div>
         <form>
