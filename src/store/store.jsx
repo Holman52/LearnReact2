@@ -117,7 +117,6 @@ const productSlice = createSlice({
   },
 });
 
-
 export const store = configureStore({
   reducer: {
     products: productSlice
@@ -125,7 +124,6 @@ export const store = configureStore({
 })
 
 export const { increment, decrement } = productSlice.actions;
-export default productSlice.reducer;
 
 
 

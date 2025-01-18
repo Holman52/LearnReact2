@@ -1,7 +1,6 @@
 import React, {useContext} from "react";
 import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
-
 import "./App.scss"
 import ContextLog from "./context/Contexlog";
 
@@ -31,6 +30,7 @@ function App() {
   //   localStorage.removeItem('user' , 'пользователь зарегистрирован')
   //   setIsLoggedIn(false);
   // };
+
   const context = useContext(ContextLog)
   return (
     <React.Fragment>

@@ -62,7 +62,7 @@ const MainHeader = (props) => {
 //     }
 // ]
 const DataProduct = useSelector((state) => state.products.products)
-console.log(DataProduct)
+
   return (
     <React.Fragment>
     <header className="main-header">
