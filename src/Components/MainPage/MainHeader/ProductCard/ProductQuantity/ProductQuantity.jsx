@@ -3,7 +3,8 @@ import './ProductQuantity.scss'
 import Button from "../../../../UI/Button/But";
 import { useDispatch, useSelector } from "react-redux";
 
-import { incrementAction, decrementAction} from "../../../../../store/store";
+// import { incrementAction, decrementAction} from "../../../../../store/store";
+import { increment,decrement } from "../../../../../store/store";
 const ProductQuantity = (props) =>{
 
     // const [,update] = useReducer((x) => x + 1,0)
@@ -19,8 +20,8 @@ const ProductQuantity = (props) =>{
         <div>Количество</div>
         <form>
             <input type="input" id={props.id} value={value.value}></input>
-            <Button onClick={() => dispatch(decrementAction(props.id))}>-</Button>
-            <Button onClick={() => dispatch(incrementAction(props.id))}>+</Button>
+            <Button onClick={() => dispatch(decrement(props.id))}>-</Button>
+            <Button onClick={() => dispatch(increment(props.id))}>+</Button>
         </form>
     </div>)
 }
