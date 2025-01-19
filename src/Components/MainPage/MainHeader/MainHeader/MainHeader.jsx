@@ -62,8 +62,8 @@ const MainHeader = (props) => {
 //     }
 // ]
 const DataProduct = useSelector((state) => state.products)
-
-  return (
+console.log(DataProduct.id)
+return (
     <React.Fragment>
     <header className="main-header">
        <Navigation />
@@ -73,8 +73,15 @@ const DataProduct = useSelector((state) => state.products)
     </section>
     <main>
       <ul className="content">
-        {DataProduct.map((Product) => (
-          <CardProductInfo id={Product.id}
+        {DataProduct.map((item) => (
+          <CardProductInfo 
+          id={item.id}
+          url ={item.url}
+          name ={item.name}
+          grade ={item.grade}
+          price ={item.price}
+          count={item.count}
+          time ={item.time}
 
           ></CardProductInfo>
         ))}

@@ -41,7 +41,7 @@ import { configureStore, createAction, createReducer , createSlice} from '@redux
 const initialState = [
     {
       url: '/img_a.jpg',
-      id:"c1",
+      id: 11,
       name: "Пицца плюс",
       time: 50,
       grade: 4.5,
@@ -50,7 +50,7 @@ const initialState = [
   },
   {
       url: '/img_b.jpg',
-      id:"c2",
+      id: 22,
       name: "Тануки",
       time: 45,
       grade: 4.4,
@@ -59,7 +59,7 @@ const initialState = [
   },
   {
       url: '/img_c.jpg',
-      id:"c3",
+      id: 33,
       name: "FoodBand",
       time: 50,
       grade: 4.6,
@@ -68,7 +68,7 @@ const initialState = [
   },
   {
       url: '/img_d.jpg',
-      id:"c4",
+      id:44,
       name: "Жадина-пицца",
       time: 50,
       grade: 4.5,
@@ -77,7 +77,7 @@ const initialState = [
   },
   {
       url: '/img_f.png',
-      id:"c5",
+      id:55,
       name: "Точка еды",
       time: 60,
       grade: 4.8,
@@ -86,7 +86,7 @@ const initialState = [
   },
   {
       url: '/img_g.png',
-      id:"c6",
+      id:66,
       name: "PizzaBurger",
       time: 40,
       grade: 4.3,
@@ -95,7 +95,8 @@ const initialState = [
   },
 ]
 
-
+const data = initialState.map((item)=> item.id)
+console.log(data)
 
 const productSlice = createSlice({
   name: 'products',
@@ -109,13 +110,13 @@ const productSlice = createSlice({
     },
     decrement: (state, action) => {
       const product = state.find(p => p.id === action.payload);
-      if (product) {
-        state.count --
+      if (product && product.count>0) {
+        product.count --
       }
     },
   },
 });
-
+console.log(initialState.id)
 export const store = configureStore({
   reducer: {
     products: productSlice.reducer
