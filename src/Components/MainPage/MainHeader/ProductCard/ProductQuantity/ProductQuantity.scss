@@ -1,1 +1,32 @@
-.c
+
+.form-product{
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.product-count{
+    width: 35%;
+    margin-bottom: 10px;
+}
+
+.input-count{
+    width: 30px;
+}
+.flex-label-input{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+.flex-button-buy{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: flex-end;
+}
+.btn-buy{
+    width: 20px;
+    height: 20px;
+}

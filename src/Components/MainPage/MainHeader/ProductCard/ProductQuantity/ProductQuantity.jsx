@@ -1,7 +1,7 @@
 import React from "react";
 import './ProductQuantity.scss'
-import Button from "../../../../UI/Button/But";
-import { useDispatch, useSelector } from "react-redux";
+import ButtonBuy from "../../../../UI/Button/ButtonBuy";
+import { useDispatch } from "react-redux";
 
 // import { incrementAction, decrementAction} from "../../../../../store/store";
 import { increment,decrement } from "../../../../../store/store";
@@ -16,11 +16,15 @@ const ProductQuantity = (props) =>{
     const dispatch = useDispatch()
   
    return (<div className="product-count">
-        <div className="product-quantity">Количество</div>
         <form className='form-product'>
-            <input type="input" id={props.id} value={props.count} className="input-count"></input>
-            <Button className='btn-decrement' onClick={() => dispatch(decrement(props.id))}>-</Button>
-            <Button className='btn-increment' onClick={() => dispatch(increment(props.id))}>+</Button>
+            <div className="flex-label-input">
+                <label id={props.id} className="product-quantity">Количество:</label>
+                <input type="input" id={props.id} value={props.count} className="input-count"></input>
+            </div>
+            <div className="flex-button-buy">
+                <ButtonBuy className='btn-buy' onClick={() => dispatch(decrement(props.id))}>-</ButtonBuy>
+                <ButtonBuy className='btn-buy' onClick={() => dispatch(increment(props.id))}>+</ButtonBuy>
+            </div>
         </form>
     </div>)
 }
