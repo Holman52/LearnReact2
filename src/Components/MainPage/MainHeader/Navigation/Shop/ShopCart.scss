@@ -1,0 +1,44 @@
+
+  .ShopCart_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .ShopCart_footer {
+    text-align: right;
+  }
+  .actions{
+    text-align: right;
+      .btn-footer {
+        font: inherit;
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid #6b068a;
+        padding: 0.5rem 2rem;
+        border-radius: 25px;
+        margin-left: 1rem;
+            .actions .close-Shop {
+                color: #6b068a;
+            }
+            
+            .actions .order-Shop {
+                background-color: #ffffff;
+                color: white;
+            }
+            .actions .btn-footer:hover,
+            .actions .btn-footer:active {
+              background-color: #47035d;
+              border-color: #47035d;
+              color: white;
+            }
+      }
+      
+  }
+
+  
+
+
