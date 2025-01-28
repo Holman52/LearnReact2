@@ -1,10 +1,10 @@
 import Modal from "../../../../ModalWindow/ModalWindow"
-import Button from "../../../../UI/Button/But"
+import ButtonShop from "../../../../UI/Button/ButtonShop"
 import './ShopCart.scss'
 
 
 
-const ShopCart = () => {
+const ShopCart = (props) => {
     return (
         <Modal>
             <div className="ShopCart_header">
@@ -12,8 +12,8 @@ const ShopCart = () => {
                 <div className="ShopCart_header-sum">Сумма заказа:</div>
             </div>
             <div className="ShopCart_footer">
-                <Button className="close-Shop">Закрыть</Button>
-                <Button className="order-Shop">Заказать</Button>
+                <ButtonShop type="submit" className="close-Shop" onClick={props.onCloseCart}>Закрыть</ButtonShop>
+                <ButtonShop type="submit" className="order-Shop">Заказать</ButtonShop>
             </div>
         </Modal>
     )

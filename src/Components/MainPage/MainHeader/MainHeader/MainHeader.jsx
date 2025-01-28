@@ -66,7 +66,7 @@ console.log(DataProduct.id)
 return (
     <React.Fragment>
     <header className="main-header">
-       <Navigation />
+       <Navigation onShowCart={props.onShowCart}/>
     </header>
     <section className="advertising">
        <Banner/>

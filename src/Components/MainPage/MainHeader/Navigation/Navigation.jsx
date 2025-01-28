@@ -21,7 +21,7 @@ const Navigation = (props) => {
                 </button>
                 <button className="login__buy">
                     <div className="buy-icon"><img src={'/buy.svg'} alt="logo"/></div>
-                    <div className="buy-text">Корзина</div>
+                    <div className="buy-text" onClick={props.onShowCart}>Корзина</div>
                 </button>
             </div>
     </nav>

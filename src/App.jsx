@@ -1,18 +1,22 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import "./App.scss"
 import ContextLog from "./context/Contexlog";
-import { useSelector } from "react-redux";
 import ShopCart from "./Components/MainPage/MainHeader/Navigation/Shop/ShopCart";
 
 
 
 
 function App() {
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isShopCart, setShopCart] = useState(false);
 
-  
+  const onShowCart = () =>{
+    setShopCart(true)
+  }
+  const onCloseCart =() =>{
+    setShopCart(false)
+  }
   // useEffect(() => {
     
   //   const local = localStorage.getItem("user")
@@ -36,9 +40,9 @@ function App() {
   return (
     <React.Fragment>
       <div className="container">
-          <ShopCart></ShopCart>
+          {isShopCart && <ShopCart onShowCart={onShowCart} onCloseCart={onCloseCart}/>}
           {!context.isLoggedIn && <Login />}
-          {context.isLoggedIn && <Home  />}
+          {context.isLoggedIn && <Home  onShowCart={onShowCart}/>}
       </div>
     </React.Fragment>
 )}

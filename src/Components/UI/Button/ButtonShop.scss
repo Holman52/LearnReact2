@@ -1,0 +1,15 @@
+.btn-shop {
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #6b068a;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+}
+ .btn-footer:hover,
+ .btn-footer:active {
+  background-color: #47035d;
+  border-color: #47035d;
+  color: white;
+}
