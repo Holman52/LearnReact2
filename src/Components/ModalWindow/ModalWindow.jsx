@@ -2,8 +2,8 @@ import ReactDOM from "react-dom"
 import React from "react";
 import './ModalWindow.scss'
 
-const BackDrop = () => {
-    return <div className="backdrop"></div>
+const BackDrop = (props) => {
+    return <div className="backdrop" onClick={props.onClick}></div>
 }
 
 const ModalWindow = (props) =>{
@@ -17,7 +17,7 @@ const portal = document.getElementById('overlay')
 const Modal = (props) =>{
     return (
         <React.Fragment>
-            {ReactDOM.createPortal(<BackDrop />, portal)}
+            {ReactDOM.createPortal(<BackDrop onClick={props.onCloseCart}/>, portal)}
             {ReactDOM.createPortal(<ModalWindow>{props.children}</ModalWindow>, portal)}
         </React.Fragment>
     )

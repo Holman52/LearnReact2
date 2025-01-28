@@ -19,9 +19,9 @@ const Navigation = (props) => {
                     <div className="user-icon"><img src={'/user.svg'} alt="logo"/></div>
                     <div className="login-user">Выйти </div>
                 </button>
-                <button className="login__buy">
+                <button className="login__buy" onClick={props.onShowCart}>
                     <div className="buy-icon"><img src={'/buy.svg'} alt="logo"/></div>
-                    <div className="buy-text" onClick={props.onShowCart}>Корзина</div>
+                    <div className="buy-text">Корзина</div>
                 </button>
             </div>
     </nav>

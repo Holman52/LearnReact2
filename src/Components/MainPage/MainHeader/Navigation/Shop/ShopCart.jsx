@@ -6,7 +6,7 @@ import './ShopCart.scss'
 
 const ShopCart = (props) => {
     return (
-        <Modal>
+        <Modal onCloseCart={props.onCloseCart}>
             <div className="ShopCart_header">
                 <div className="ShopCart_header-korz">Корзина</div>
                 <div className="ShopCart_header-sum">Сумма заказа:</div>
