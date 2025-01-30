@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 
 // import { incrementAction, decrementAction} from "../../../../../store/store";
 import { increment,decrement } from "../../../../../store/store";
+import Button from "../../../../UI/Button/But";
 const ProductQuantity = (props) =>{
 
     // const [,update] = useReducer((x) => x + 1,0)
@@ -25,6 +26,7 @@ const ProductQuantity = (props) =>{
                 <ButtonBuy className='btn-buy' onClick={() => dispatch(decrement(props.id))}>-</ButtonBuy>
                 <ButtonBuy className='btn-buy' onClick={() => dispatch(increment(props.id))}>+</ButtonBuy>
             </div>
+            <Button className="add-shop">Добавить</Button>
         </form>
     </div>)
 }

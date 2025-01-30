@@ -29,10 +29,12 @@ const CardProductInfo = (props) =>{
                                 props.count===0 ?
                                      <Button className="buy-btn" onClick={() => dispatch(increment(props.id))}>
                                 В корзину
-                            </Button>:<ProductQuantity id={props.id} count={props.count}/>  
+                            </Button>:
+                                <ProductQuantity id={props.id} count={props.count}/>
+
                             }
                         </div>
-                    </div>
+                    </div>              
         </CardProduct>
     </div>
    )
