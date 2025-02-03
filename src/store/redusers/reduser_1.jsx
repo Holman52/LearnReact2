@@ -1,13 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const shopSlice = createSlice({
-    name: 'products',
+    name: 'productShop',
     initialState: {
     items: [],
   },
     reducers: {
-      addProdictShop: (state, action) => {
+      addProductShop: (state, action) => {
         // Проверяем, есть ли товар уже в корзине
         const existingItem = state.items.find(item => item.id === action.payload.id);
         if (existingItem) {
@@ -18,16 +17,17 @@ const shopSlice = createSlice({
           state.items.push({ ...action.payload, count: action.payload.count });
         }
       },
-      removeProdictShop: (state, action) => {
-        // Удаляем товар из корзины по ID
-        state.items = state.items.filter(item => item.id !== action.payload.id);
-      },
-      clearShop: (state) => {
-        // Очищаем корзину
-        state.items = [];
-      },
+      // removeProductShop: (state, action) => {
+      //   // Удаляем товар из корзины по ID
+      //   state.items = state.items.filter(item => item.id !== action.payload.id);
+      // },
+      // clearShop: (state) => {
+      //   // Очищаем корзину
+      //   state.items = [];
+      // },
     },
   });
   ;
 
-  export default shopSlice 
+ export default shopSlice.reducer
+export const { addProductShop } = shopSlice.actions

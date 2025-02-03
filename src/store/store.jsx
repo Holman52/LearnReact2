@@ -1,5 +1,5 @@
 import { configureStore , createSlice} from '@reduxjs/toolkit'
-import shopSlice from './redusers/reduser_1';
+import shopSlice from './redusers/reduser_1'
 
 const initialState = [
     {
@@ -83,7 +83,7 @@ console.log(initialState.id)
 export const store = configureStore({
   reducer: {
     products: productSlice.reducer,
-    productShop: shopSlice.reducer
+    productShop: shopSlice
   }
 })
 

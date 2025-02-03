@@ -4,8 +4,10 @@ import ButtonBuy from "../../../../UI/Button/ButtonBuy";
 import { useDispatch } from "react-redux";
 
 // import { incrementAction, decrementAction} from "../../../../../store/store";
-import { increment,decrement,addProductShop } from "../../../../../store/store";
+import { increment,decrement} from "../../../../../store/store";
+
 import Button from "../../../../UI/Button/But";
+import { addProductShop } from "../../../../../store/redusers/reduser_1";
 const ProductQuantity = (props) =>{
 
     // const [,update] = useReducer((x) => x + 1,0)
