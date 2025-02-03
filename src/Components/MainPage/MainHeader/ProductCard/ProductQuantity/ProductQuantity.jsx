@@ -4,7 +4,7 @@ import ButtonBuy from "../../../../UI/Button/ButtonBuy";
 import { useDispatch } from "react-redux";
 
 // import { incrementAction, decrementAction} from "../../../../../store/store";
-import { increment,decrement } from "../../../../../store/store";
+import { increment,decrement,addProductShop } from "../../../../../store/store";
 import Button from "../../../../UI/Button/But";
 const ProductQuantity = (props) =>{
 
@@ -26,7 +26,7 @@ const ProductQuantity = (props) =>{
                 <ButtonBuy className='btn-buy' onClick={() => dispatch(decrement(props.id))}>-</ButtonBuy>
                 <ButtonBuy className='btn-buy' onClick={() => dispatch(increment(props.id))}>+</ButtonBuy>
             </div>
-            <Button className="add-shop">Добавить</Button>
+            <Button className="add-shop" onClick={() => dispatch(addProductShop(props.id))}>Добавить</Button>
         </form>
     </div>)
 }
