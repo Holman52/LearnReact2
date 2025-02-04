@@ -28,7 +28,8 @@ const ProductQuantity = (props) =>{
                 <ButtonBuy className='btn-buy' onClick={() => dispatch(decrement(props.id))}>-</ButtonBuy>
                 <ButtonBuy className='btn-buy' onClick={() => dispatch(increment(props.id))}>+</ButtonBuy>
             </div>
-            <Button className="add-shop" onClick={() => dispatch(addProductShop(props.id))}>Добавить</Button>
+            <Button className="add-shop" onClick={() => dispatch(addProductShop({ id: props.id, name: props.name, count: props.count,
+            time: props.time, url:props.url, grade:props.grade, price: props.price}))}>Добавить</Button>
         </form>
     </div>)
 }

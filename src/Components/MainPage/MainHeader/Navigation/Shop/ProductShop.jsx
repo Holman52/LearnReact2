@@ -1,31 +1,28 @@
-import { useSelector } from "react-redux";
+
 import React from "react";
 
-const ProductShop = () =>{
-    const data = useSelector((state) => state.productShop.item)
-    console.log(data)
+const ProductShop = (props) =>{
     return(
-        {data.map((item) => (
         <React.Fragment>
-        <div className="img_food"><img src={item.url} alt={item.id} className="img_food"/></div>
+        <div className="img_food"><img src={props.url} alt={props.id} className="img_food"/></div>
                     <div className="text-food">
                         <div className="delivery">
-                            <div className="food-header">{item.name}</div>
-                            <div className="time">{item.time} мин</div>
+                            <div className="food-header">{props.name}</div>
+                            <div className="time">{props.time} мин</div>
                         </div>
                         <div className="desc">
                             <div className="desc-reyt">
                                 <div className="icon-star"></div>
-                                <div className="reyt">{item.grade}</div>
+                                <div className="reyt">{props.grade}</div>
                             </div>
                             <div className="flex-food">
-                                <span className="price">от {item.price} ₽</span>
+                                <span className="price">от {props.price} ₽</span>
                                 <div className="point"></div>
                                 <div className="food">Пицца</div>
                             </div>
                         </div>
                     </div>   
-        </React.Fragment>))}
+    </React.Fragment>
     )
 }
 export default ProductShop

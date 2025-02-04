@@ -83,7 +83,7 @@ console.log(initialState.id)
 export const store = configureStore({
   reducer: {
     products: productSlice.reducer,
-    productShop: shopSlice
+    productShop: shopSlice,
   }
 })
 

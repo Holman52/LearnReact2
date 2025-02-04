@@ -30,7 +30,9 @@ const CardProductInfo = (props) =>{
                                      <Button className="buy-btn" onClick={() => dispatch(increment(props.id))}>
                                 В корзину
                             </Button>:
-                                <ProductQuantity id={props.id} count={props.count}/>
+                                <ProductQuantity id={props.id} count={props.count} name={props.name} time={props.time}
+                                    url={props.url} grade={props.grade} price={props.price}
+                                />
 
                             }
                         </div>
