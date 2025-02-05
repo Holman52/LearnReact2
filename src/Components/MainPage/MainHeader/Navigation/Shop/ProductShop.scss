@@ -1,0 +1,81 @@
+.shop_content{
+    display: flex;
+    gap: 10px;
+}
+.shop_img_shop {
+    height: 25vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.shop_text-food{
+    padding: 2% 5% 5% 5%;
+    width: 80%;
+}
+.shop_delivery {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+ 
+}
+.lorem{
+    width: 80%;
+}
+.shop_food-header{
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+.shop_flex-gradeName{
+    display: flex;
+    gap: 20px;
+}
+.shop_time {
+    width: 57px;
+    border-radius: 3px;
+    color: white;
+    background: #262626;
+    font-size: 12px;
+    text-align: center;
+    padding: 2%;
+}
+.shop_desc {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+    // height: 120px;
+    align-items: center;
+}
+.shop_icon-star {
+    background-image: url(../../../../../../public/star.svg);
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+}
+.shop_desc-reyt{
+    display: flex;
+    color: #FFC107;
+    font-size: 18px;
+    font-weight: 700;
+    gap: 5px;
+    align-items: center;
+}
+// .price{
+//     text;
+// }
+.shop_flex-food{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    color: #8C8C8C;
+    font-size: 18px;
+    align-items: center;
+
+}
+.point {
+    height: 5px;
+    width: 5px;
+    border-radius: 100%;
+    background-color: #8C8C8C;
+}
