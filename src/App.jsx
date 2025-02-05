@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useState,useEffect} from "react";
 import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import "./App.scss"
@@ -10,6 +10,16 @@ import ShopCart from "./Components/MainPage/MainHeader/Navigation/Shop/ShopCart"
 
 function App() {
   const [isShopCart, setShopCart] = useState(false);
+  useEffect(() => { 
+    if (isShopCart) { 
+      document.body.style.overflow = "hidden"; // Блокируем скролл 
+    } else { 
+      document.body.style.overflow = "auto"; // Восстанавливаем скролл 
+    } 
+    return () => { 
+      document.body.style.overflow = "auto"; 
+    }; 
+  }, [isShopCart]);
 
   const onShowCart = () =>{
     setShopCart(true)
