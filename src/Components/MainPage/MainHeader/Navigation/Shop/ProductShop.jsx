@@ -2,6 +2,17 @@
 import React from "react";
 import './ProductShop.scss' 
 const ProductShop = (props) =>{
+    let message = '';
+    if (props.count%10===1) {
+      message = <span>штука</span>;
+    }
+ 
+    else if (props.count%10>1 && props.count<5 ) {
+      message = <span>штуки</span>;
+    }
+    else {
+      message = <span>штук</span>;
+    }
     return(
         <div className="shop_content">
         <div className="shop_img_shop"><img src={props.url} alt={props.id} className="shop_img_shop"/></div>
@@ -19,7 +30,8 @@ const ProductShop = (props) =>{
                         <div className="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Labore et dolore magna aliqua.</div>
                         <div className="shop_desc">
                             <div className="shop_flex-food">
-                                <span className="shop_price">от {props.price} ₽</span>
+                                <div>{props.count} {message}</div>
+                                <div className="shop_price">от {props.price} ₽</div>
                             </div>
                         </div>
                     </div>  

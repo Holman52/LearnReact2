@@ -7,14 +7,38 @@ import { useSelector } from "react-redux"
 const ShopCart = (props) => {
     const DataProductShop = useSelector((state)=> state.productShop.items)
     console.log(DataProductShop)
+    let totalCount = 0;
+    const HandlerSum = () =>{
+        let totalPrice = 0;
+
+        DataProductShop.forEach(item => {
+        totalCount += item.count;
+        totalPrice += item.price * item.count;
+    });
+        return {
+        totalCount,
+        totalPrice
+     };
+    }
+    const totals = HandlerSum()
     return (
         <Modal onCloseCart={props.onCloseCart}>
             <div className="ShopCart_header">
                 <div className="ShopCart_header-korz">Корзина</div>
-                <div className="ShopCart_header-sum">Сумма заказа:</div>
+                
+                {
+                    totals.totalPrice>0 ?
+                    <div className="ShopCart_sum-count">
+                        <div className="ShopCart_header-sum">Сумма заказа: {totals.totalPrice}₽</div>
+                        <div className="ShopCart_header-sum">Количество товаров: {totals.totalCount} </div>
+                    </div>
+                        : <div></div>
+                }
             </div>
             {DataProductShop.map((item) => (
                 <ProductShop
+                sumCount= {totals.totalCount}
+                sumPrice = {totals.totalPrice}
                 id={item.id}
                 url ={item.url}
                 name ={item.name}
