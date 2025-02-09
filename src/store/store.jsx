@@ -75,6 +75,7 @@ const productSlice = createSlice({
       const product = state.find(p => p.id === action.payload);
       if (product && product.count>0) {
         product.count --
+
       }
     },
   },

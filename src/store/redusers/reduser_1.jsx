@@ -13,6 +13,7 @@ const shopSlice = createSlice({
         if (existingItem) {
           // Если товар уже есть, увеличиваем его количество
           existingItem.count += action.payload.count;
+          
         } else {
           // Если товара нет в корзине, добавляем его
           state.items.push({ ...action.payload, count: action.payload.count });

@@ -9,8 +9,11 @@
     background-repeat: no-repeat;
 }
 .shop_text-food{
-    padding: 2% 5% 5% 5%;
+    padding-bottom: 5%;
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .shop_delivery {
     display: flex;
@@ -42,7 +45,7 @@
 .shop_desc {
     display: flex;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 100%;
     // height: 120px;
     align-items: center;

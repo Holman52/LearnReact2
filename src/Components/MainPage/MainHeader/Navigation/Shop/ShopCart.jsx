@@ -10,7 +10,6 @@ const ShopCart = (props) => {
     let totalCount = 0;
     const HandlerSum = () =>{
         let totalPrice = 0;
-
         DataProductShop.forEach(item => {
         totalCount += item.count;
         totalPrice += item.price * item.count;
@@ -20,6 +19,8 @@ const ShopCart = (props) => {
         totalPrice
      };
     }
+ 
+
     const totals = HandlerSum()
     return (
         <Modal onCloseCart={props.onCloseCart}>
@@ -37,8 +38,6 @@ const ShopCart = (props) => {
             </div>
             {DataProductShop.map((item) => (
                 <ProductShop
-                sumCount= {totals.totalCount}
-                sumPrice = {totals.totalPrice}
                 id={item.id}
                 url ={item.url}
                 name ={item.name}

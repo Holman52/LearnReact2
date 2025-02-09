@@ -1,7 +1,17 @@
 
 import React from "react";
 import './ProductShop.scss' 
+
 const ProductShop = (props) =>{
+    const HandlerSum = ()=>{
+        let itemPrice = 0;
+        let price = props.price;
+        let count = props.count;
+        itemPrice = price * count;
+        return itemPrice
+    }
+    
+    
     let message = '';
     if (props.count%10===1) {
       message = <span>штука</span>;
@@ -13,6 +23,7 @@ const ProductShop = (props) =>{
     else {
       message = <span>штук</span>;
     }
+    const sum= HandlerSum()
     return(
         <div className="shop_content">
         <div className="shop_img_shop"><img src={props.url} alt={props.id} className="shop_img_shop"/></div>
@@ -31,7 +42,7 @@ const ProductShop = (props) =>{
                         <div className="shop_desc">
                             <div className="shop_flex-food">
                                 <div>{props.count} {message}</div>
-                                <div className="shop_price">от {props.price} ₽</div>
+                                <div className="shop_price"> {sum.itemPrice} ₽</div>
                             </div>
                         </div>
                     </div>  
@@ -39,4 +50,5 @@ const ProductShop = (props) =>{
 
     )
 }
+
 export default ProductShop
