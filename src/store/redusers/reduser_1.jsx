@@ -19,10 +19,10 @@ const shopSlice = createSlice({
           state.items.push({ ...action.payload, count: action.payload.count });
         }
       },
-      // removeProductShop: (state, action) => {
-      //   // Удаляем товар из корзины по ID
-      //   state.items = state.items.filter(item => item.id !== action.payload.id);
-      // },
+      removeProductShop: (state, action) => {
+        // Удаляем товар из корзины по ID
+        state.items = state.items.filter(item => item.id !== action.payload.id);
+      },
       // clearShop: (state) => {
       //   // Очищаем корзину
       //   state.items = [];
@@ -32,4 +32,4 @@ const shopSlice = createSlice({
   ;
 
 export default shopSlice.reducer
-export const { addProductShop } = shopSlice.actions
+export const { addProductShop, removeProductShop } = shopSlice.actions
