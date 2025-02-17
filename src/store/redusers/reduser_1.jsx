@@ -23,6 +23,18 @@ const shopSlice = createSlice({
         // Удаляем товар из корзины по ID
         state.items = state.items.filter(item => item.id !== action.payload.id);
       },
+      addProductCount: (state, action) =>{
+        const product = state.items.find(item => item.id === action.payload.id);
+          if (product) {
+            product.count ++;
+          }
+      },
+      removeProductCount: (state, action) =>{
+        const product = state.items.find(item => item.id === action.payload.id);
+          if (product) {
+            product.count ++;
+          }
+      }
       // clearShop: (state) => {
       //   // Очищаем корзину
       //   state.items = [];
@@ -32,4 +44,4 @@ const shopSlice = createSlice({
   ;
 
 export default shopSlice.reducer
-export const { addProductShop, removeProductShop } = shopSlice.actions
+export const { addProductShop, removeProductShop,removeProductCount, addProductCount } = shopSlice.actions

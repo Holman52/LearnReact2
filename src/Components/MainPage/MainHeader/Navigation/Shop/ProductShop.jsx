@@ -2,19 +2,20 @@
 import React from "react";
 import './ProductShop.scss' 
 import ButtonBuy from "../../../../UI/Button/ButtonBuy";
-import { useDispatch } from "react-redux";
-import { removeProductShop } from "../../../../../store/redusers/reduser_1";
+import { useDispatch, useSelector } from "react-redux";
+import { removeProductShop, removeProductCount, addProductCount} from "../../../../../store/redusers/reduser_1";
 
 const ProductShop = (props) =>{
     const dispatch = useDispatch()
-    let price = props.price;
-    let count = props.count;
-    let itemPrice = 0;
-    const HandlerSum = ()=>{
-        itemPrice = price * count;
-        return itemPrice
-    }
-    console.log(price)
+    const DataProductShopCount = useSelector((state)=> state.productShop.items)
+    console.log(DataProductShopCount)
+    // const product = state.items.find(item => item.id === props.id)
+    // const totalCount = DataProductShop.count
+    // const sum = DataProductShop.count*DataProductShop.price
+    // if (product){
+    //     totalCount = DataProductShop.count
+        
+    // }
     
     let message = '';
     if (props.count%10===1) {
@@ -27,7 +28,6 @@ const ProductShop = (props) =>{
     else {
       message = <span>штук</span>;
     }
-    const sum= HandlerSum()
     return(
         <div className="shop_content">
             <div className="shop_img_shop"><img src={props.url} alt={props.id} className="shop_img_shop"/></div>
@@ -46,15 +46,15 @@ const ProductShop = (props) =>{
                         <div className="shop_desc">
                             <div className="shop_flex-food">
                                 <div>{props.count} {message}</div>
-                                <div className="shop_price"> {sum} ₽</div>
+                                <div className="shop_price"> ₽</div>
                             </div>
                         </div>
                     </div>  
             <div>
                 <div className='delete-product-shop'onClick={() => dispatch(removeProductShop({id: props.id}))}><img src={'/icon-delete.svg'} alt="icon-delete"></img></div>
                 <div>
-                    {/* <ButtonBuy></ButtonBuy>
-                    <ButtonBuy></ButtonBuy> */}
+                    <ButtonBuy onClick={() => dispatch(removeProductCount({id: props.id}))}>-</ButtonBuy>
+                    <ButtonBuy onClick={() => dispatch(addProductCount({id: props.id}))}>+</ButtonBuy>
                 </div>
             </div>
         </div> 
