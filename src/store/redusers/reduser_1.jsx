@@ -32,7 +32,7 @@ const shopSlice = createSlice({
       removeProductCount: (state, action) =>{
         const product = state.items.find(item => item.id === action.payload.id);
           if (product) {
-            product.count ++;
+            product.count --;
           }
       }
       // clearShop: (state) => {

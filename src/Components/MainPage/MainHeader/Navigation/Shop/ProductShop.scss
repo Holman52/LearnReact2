@@ -1,6 +1,11 @@
 .shop_content{
     display: flex;
     gap: 10px;
+    flex-direction: column;
+}
+.card_shop-product{
+    display: flex;
+    gap: 10px;
 }
 .shop_img_shop {
     height: 25vh;

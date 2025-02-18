@@ -36,18 +36,18 @@ const ShopCart = (props) => {
                         : <div></div>
                 }
             </div>
-            {DataProductShop.map((item) => (
+            {/* {DataProductShop.map((item) => ( */}
                 <ProductShop
-                id={item.id}
-                url ={item.url}
-                name ={item.name}
-                grade ={item.grade}
-                price ={item.price}
-                count={item.count}
-                time ={item.time}
+                // id={item.id}
+                // url ={item.url}
+                // name ={item.name}
+                // grade ={item.grade}
+                // price ={item.price}
+                // count={item.count}
+                // time ={item.time}
 
           ></ProductShop>
-        ))}
+        {/* ))} */}
             <div className="ShopCart_footer">
                 <ButtonShop type="submit" className="close-Shop" onClick={props.onCloseCart}>Закрыть</ButtonShop>
                 <ButtonShop type="submit" className="order-Shop">Заказать</ButtonShop>
