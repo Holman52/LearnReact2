@@ -22,6 +22,28 @@
      background-color: #0022fff5;
      color: white;
  }
+ .sum-count-flex{
+  display: flex;
+  gap: 5px;
+  justify-content: end;
+  align-items: center;
+ 
+  // justify-content: space-between ;
+ }
+ .input-small{
+  min-width: 10px;
+  max-width: 15%;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+ }
+ .input-small-very{
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 40px;
+  padding: 1%;
+ }
       
   
 

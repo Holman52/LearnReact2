@@ -1,5 +1,6 @@
 
 import React from "react";
+import { useState } from "react";
 import './ProductShop.scss' 
 import ButtonBuy from "../../../../UI/Button/ButtonBuy";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,31 +9,30 @@ import { removeProductShop, removeProductCount, addProductCount} from "../../../
 const ProductShop = (props) =>{
     const dispatch = useDispatch()
     const DataProductShopCount = useSelector((state)=> state.productShop.items)
-    console.log(DataProductShopCount)
-    // const product = DataProductShopCount.find(item => item.id === props.id)
+    const Count = useSelector((state)=> state.productShop.items.count)
+    console.log(DataProductShopCount.count);
     // const totalCount = DataProductShop.count
     // if (product){
     //     totalCount = DataProductShop.count
-        
+    console.log(Count);
     // }
-    let message = '';
-    if (props.count%10===1) {
-        message = <span>штука</span>;
-    }
-    
-    else if (props.count%10>1 && props.count<5 ) {
-        message = <span>штуки</span>;
-    }
-    else {
-        message = <span>штук</span>;
-    }
+    // let message = '';
+    //     if (item.count%10===1) {
+    //         <span>штука</span>;
+    //     }
+        
+    //     else if (item.count%10>1 && item.count<5 ) {
+    //         <span>штуки</span>;
+    //     }
+    //     else {
+    //          <span>штук</span>;
+    //     }
     const changeCountPlus = (item) => {
         dispatch(addProductCount({id: item.id}))
     }
     const changeCountMin = (item) => {
         dispatch(removeProductCount({id: item.id}))
     }
-    
     return(
         <div className="shop_content">
        
@@ -52,19 +52,26 @@ const ProductShop = (props) =>{
                         </div>
                         <div className="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Labore et dolore magna aliqua.</div>
                         <div className="shop_desc">
-                      
+                        <form>
                            <div className="shop_flex-food">
-                                <div>{item.count} {message}</div>
-                                <div className="shop_price">{item.price*item.count} ₽</div>
+                                <input value={item.count}></input>
+                                {item.count%10===1 ? (
+                                    <span>штука</span>
+                                ) : item.count%10>1 && item.count<5 ? (
+                                    <span>штуки</span>
+                                ) : (
+                                    <span>штук</span>
+                                )}
+                                <input className="shop_price" value={item.price*item.count} min={1}></input><span>₽</span>
                             </div>
-
+                        </form>
                         </div>
                     </div>  
             <div>
                 <div className='delete-product-shop'onClick={() => dispatch(removeProductShop({id: item.id}))}><img src={'/icon-delete.svg'} alt="icon-delete"></img></div>
                 <div>
-                    <ButtonBuy onClick={() => changeCountPlus(item, Math.max(1,item.count + 1))}>+</ButtonBuy>
-                    <ButtonBuy onClick={() => changeCountMin(item, Math.max(1,item.count - 1))}>-</ButtonBuy>
+                    <ButtonBuy onClick={() => changeCountPlus(item)}>+</ButtonBuy>
+                    <ButtonBuy onClick={() => changeCountMin(item)}>-</ButtonBuy>
                 </div>
             </div>
             </div>

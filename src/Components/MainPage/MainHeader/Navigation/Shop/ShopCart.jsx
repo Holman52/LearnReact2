@@ -30,8 +30,12 @@ const ShopCart = (props) => {
                 {
                     totals.totalPrice>0 ?
                     <div className="ShopCart_sum-count">
-                        <div className="ShopCart_header-sum">Сумма заказа: {totals.totalPrice}₽</div>
-                        <div className="ShopCart_header-sum">Количество товаров: {totals.totalCount} </div>
+                        <div className="sum-count-flex">
+                            <div className="ShopCart_header-sum">Сумма заказа:</div> <input readonly value={totals.totalPrice} className="input-small"></input><span>₽</span>
+                        </div>
+                        <div className="sum-count-flex">
+                            <div className="ShopCart_header-sum">Количество товаров:</div>  <input readonly value={totals.totalCount} className="input-small-very"></input>
+                        </div>
                     </div>
                         : <div></div>
                 }
