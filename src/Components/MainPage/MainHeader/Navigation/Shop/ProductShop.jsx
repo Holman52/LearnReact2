@@ -33,6 +33,14 @@ const ProductShop = (props) =>{
     const changeCountMin = (item) => {
         dispatch(removeProductCount({id: item.id}))
     }
+    const [inputCount, setInputCount] = useState('');
+    const changeHandlerCount = (event) => {
+    setInputCount(event.target.value)
+  }
+  const [input, setInput] = useState('');
+  const changeHandler = (event) => {
+    setInput(event.target.value)
+  }
     return(
         <div className="shop_content">
        
@@ -54,15 +62,15 @@ const ProductShop = (props) =>{
                         <div className="shop_desc">
                         <form>
                            <div className="shop_flex-food">
-                                <input value={item.count}></input>
+                                <input value={item.count} className="shop-count-card" onChange={changeHandlerCount} size={inputCount.length>1?input.length - 1:1}></input>
                                 {item.count%10===1 ? (
-                                    <span>штука</span>
+                                    <div>штука</div>
                                 ) : item.count%10>1 && item.count<5 ? (
-                                    <span>штуки</span>
+                                    <div>штуки</div>
                                 ) : (
-                                    <span>штук</span>
+                                    <div>штук</div>
                                 )}
-                                <input className="shop_price" value={item.price*item.count} ></input><span>₽</span>
+                                <input className="shop_price" value={item.price*item.count} onChange={changeHandler} size={input.length>1?input.length - 1:1}></input><div>₽</div>
                             </div>
                         </form>
                         </div>

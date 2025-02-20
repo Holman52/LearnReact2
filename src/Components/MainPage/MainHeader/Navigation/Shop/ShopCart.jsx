@@ -41,7 +41,7 @@ const ShopCart = (props) => {
                             <div className="ShopCart_header-sum">Сумма заказа:</div> <input readonly value={totals.totalPrice} className="input-small" onChange={changeHandler} size={input.length>1?input.length - 1:1}></input><span>₽</span>
                         </div>
                         <div className="sum-count-flex">
-                            <div className="ShopCart_header-sum">Количество товаров:</div>  <input readonly value={totals.totalCount} className="input-small-very" onChange={changeHandlerCount} size={inputCount.length>1?input.length - 1:1}></input>
+                            <div className="ShopCart_header-sum">Количество товаров:</div>  <input readonly value={totals.totalCount} className="input-small-very" onChange={changeHandlerCount} size={inputCount.length>1?input.length + 1:1}></input>
                         </div>
                     </div>
                         : <div></div>
