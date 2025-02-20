@@ -3,6 +3,7 @@ import ButtonShop from "../../../../UI/Button/ButtonShop"
 import './ShopCart.scss'
 import ProductShop from "./ProductShop"
 import { useSelector } from "react-redux"
+import { useState } from "react"
 
 const ShopCart = (props) => {
     const DataProductShop = useSelector((state)=> state.productShop.items)
@@ -19,8 +20,14 @@ const ShopCart = (props) => {
         totalPrice
      };
     }
- 
-
+    const [inputCount, setInputCount] = useState('');
+    const changeHandlerCount = (event) => {
+    setInputCount(event.target.value)
+  }
+  const [input, setInput] = useState('');
+  const changeHandler = (event) => {
+    setInput(event.target.value)
+  }
     const totals = HandlerSum()
     return (
         <Modal onCloseCart={props.onCloseCart}>
@@ -31,10 +38,10 @@ const ShopCart = (props) => {
                     totals.totalPrice>0 ?
                     <div className="ShopCart_sum-count">
                         <div className="sum-count-flex">
-                            <div className="ShopCart_header-sum">Сумма заказа:</div> <input readonly value={totals.totalPrice} className="input-small"></input><span>₽</span>
+                            <div className="ShopCart_header-sum">Сумма заказа:</div> <input readonly value={totals.totalPrice} className="input-small" onChange={changeHandler} size={input.length>1?input.length - 1:1}></input><span>₽</span>
                         </div>
                         <div className="sum-count-flex">
-                            <div className="ShopCart_header-sum">Количество товаров:</div>  <input readonly value={totals.totalCount} className="input-small-very"></input>
+                            <div className="ShopCart_header-sum">Количество товаров:</div>  <input readonly value={totals.totalCount} className="input-small-very" onChange={changeHandlerCount} size={inputCount.length>1?input.length - 1:1}></input>
                         </div>
                     </div>
                         : <div></div>

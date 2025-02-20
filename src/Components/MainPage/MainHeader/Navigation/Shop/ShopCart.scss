@@ -2,12 +2,15 @@
   .ShopCart_header {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     align-items: center;
     font-weight: bold;
     font-size: 1.5rem;
     margin: 1rem 0;
   }
-  
+  .ShopCart_sum-count{
+    width: 40%;
+  }
   .ShopCart_footer {
     text-align: right;
   }
@@ -25,26 +28,29 @@
  .sum-count-flex{
   display: flex;
   gap: 5px;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
  
   // justify-content: space-between ;
  }
  .input-small{
-  min-width: 10px;
+  outline:none;
+  text-align: center;
+  line-height: 20px;
+  min-width: 55px;
   max-width: 15%;
   align-items: center;
   font-weight: bold;
   font-size: 1.5rem;
  }
  .input-small-very{
+  outline:none;
   align-items: center;
   font-weight: bold;
   font-size: 1.5rem;
   width: 40px;
   padding: 1%;
  }
-      
-  
+
 
 

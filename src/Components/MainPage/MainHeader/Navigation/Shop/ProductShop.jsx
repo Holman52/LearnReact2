@@ -62,7 +62,7 @@ const ProductShop = (props) =>{
                                 ) : (
                                     <span>штук</span>
                                 )}
-                                <input className="shop_price" value={item.price*item.count} min={1}></input><span>₽</span>
+                                <input className="shop_price" value={item.price*item.count} ></input><span>₽</span>
                             </div>
                         </form>
                         </div>
