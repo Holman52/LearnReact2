@@ -7,6 +7,7 @@ import { increment } from "../../../../store/store";
 
 const CardProductInfo = (props) =>{
     const dispatch = useDispatch()
+
    return (<div className="card-product">
         <CardProduct>
             <div className="img_food"><img src={props.url} alt={props.id} className="img_food"/></div>

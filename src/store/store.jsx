@@ -10,6 +10,7 @@ const initialState = [
       grade: 4.5,
       price: 900,
       count: 0,
+      isLocal: false,
   },
   {
       url: '/img_b.jpg',
@@ -19,6 +20,7 @@ const initialState = [
       grade: 4.4,
       price: 600,
       count: 0,
+      isLocal: false,
   },
   {
       url: '/img_c.jpg',
@@ -28,6 +30,7 @@ const initialState = [
       grade: 4.6,
       price: 750,
       count: 0,
+      isLocal: false,
   },
   {
       url: '/img_d.jpg',
@@ -37,6 +40,7 @@ const initialState = [
       grade: 4.5,
       price: 900,
       count: 0,
+      isLocal: false,
   },
   {
       url: '/img_f.png',
@@ -46,6 +50,7 @@ const initialState = [
       grade: 4.8,
       price: 1100,
       count: 0,
+      isLocal: false,
   },
   {
       url: '/img_g.png',
@@ -55,6 +60,7 @@ const initialState = [
       grade: 4.3,
       price: 800,
       count: 0,
+      isLocal: false,
   },
 ]
 

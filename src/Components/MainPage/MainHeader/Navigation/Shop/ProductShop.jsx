@@ -9,12 +9,10 @@ import { removeProductShop, removeProductCount, addProductCount} from "../../../
 const ProductShop = (props) =>{
     const dispatch = useDispatch()
     const DataProductShopCount = useSelector((state)=> state.productShop.items)
-    const Count = useSelector((state)=> state.productShop.items.count)
-    console.log(DataProductShopCount.count);
     // const totalCount = DataProductShop.count
     // if (product){
     //     totalCount = DataProductShop.count
-    console.log(Count);
+
     // }
     // let message = '';
     //     if (item.count%10===1) {
@@ -45,7 +43,8 @@ const ProductShop = (props) =>{
         <div className="shop_content">
        
         {DataProductShopCount.map((item) =>(
-            <div className="card_shop-product">
+            
+            (<div className="card_shop-product">
             <div className="shop_img_shop"><img src={item.url} alt={item.id} className="shop_img_shop"/></div>
                     <div className="shop_text-food">
                         <div className="shop_delivery">
@@ -78,11 +77,14 @@ const ProductShop = (props) =>{
             <div>
                 <div className='delete-product-shop'onClick={() => dispatch(removeProductShop({id: item.id}))}><img src={'/icon-delete.svg'} alt="icon-delete"></img></div>
                 <div>
-                    <ButtonBuy onClick={() => changeCountPlus(item)}>+</ButtonBuy>
-                    <ButtonBuy onClick={() => changeCountMin(item)}>-</ButtonBuy>
+                    <ButtonBuy className='btn-buy' onClick={() => changeCountPlus(item)}>+</ButtonBuy>
+                    <ButtonBuy className='btn-buy' onClick={() => changeCountMin(item)}>-</ButtonBuy>
                 </div>
             </div>
-            </div>
+            </div>)
+            
+    
+            
                         ))}
         </div> 
 
