@@ -1,6 +1,7 @@
 
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect
+ } from "react";
 import './ProductShop.scss' 
 import ButtonBuy from "../../../../UI/Button/ButtonBuy";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,22 +10,7 @@ import { removeProductShop, removeProductCount, addProductCount} from "../../../
 const ProductShop = (props) =>{
     const dispatch = useDispatch()
     const DataProductShopCount = useSelector((state)=> state.productShop.items)
-    // const totalCount = DataProductShop.count
-    // if (product){
-    //     totalCount = DataProductShop.count
 
-    // }
-    // let message = '';
-    //     if (item.count%10===1) {
-    //         <span>штука</span>;
-    //     }
-        
-    //     else if (item.count%10>1 && item.count<5 ) {
-    //         <span>штуки</span>;
-    //     }
-    //     else {
-    //          <span>штук</span>;
-    //     }
     const changeCountPlus = (item) => {
         dispatch(addProductCount({id: item.id}))
     }
@@ -43,7 +29,8 @@ const ProductShop = (props) =>{
         <div className="shop_content">
        
         {DataProductShopCount.map((item) =>(
-            
+            <React.Fragment>
+            {item.isLocal ? 
             (<div className="card_shop-product">
             <div className="shop_img_shop"><img src={item.url} alt={item.id} className="shop_img_shop"/></div>
                     <div className="shop_text-food">
@@ -81,9 +68,9 @@ const ProductShop = (props) =>{
                     <ButtonBuy className='btn-buy' onClick={() => changeCountMin(item)}>-</ButtonBuy>
                 </div>
             </div>
-            </div>)
-            
-    
+            </div>): <React.Fragment></React.Fragment>}
+        
+            </React.Fragment>
             
                         ))}
         </div> 
