@@ -8,15 +8,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeProductShop, removeProductCount, addProductCount} from "../../../../../store/redusers/reduser_1";
 
 const ProductShop = (props) =>{
+    const [localHave, isLocalHave] = useState(false)
     const dispatch = useDispatch()
     const DataProductShopCount = useSelector((state)=> state.productShop.items)
 
     useEffect(() => {
-       const local = JSON.parse(localStorage.getItem('cart'))
-       if (local) {
-            
+       const local = localStorage.getItem('cart')
+       if (local === 'сохранен') {
+        isLocalHave(true)
        }
-    });
+    }, [DataProductShopCount]);
 
     const changeCountPlus = (item) => {
         dispatch(addProductCount({id: item.id}))
@@ -37,7 +38,7 @@ const ProductShop = (props) =>{
        
         {DataProductShopCount.map((item) =>(
             <React.Fragment>
-            {item.isLocal ? 
+            {(localHave) ? 
             (<div className="card_shop-product">
             <div className="shop_img_shop"><img src={item.url} alt={item.id} className="shop_img_shop"/></div>
                     <div className="shop_text-food">
