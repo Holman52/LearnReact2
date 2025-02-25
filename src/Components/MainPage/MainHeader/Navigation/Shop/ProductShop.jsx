@@ -11,6 +11,13 @@ const ProductShop = (props) =>{
     const dispatch = useDispatch()
     const DataProductShopCount = useSelector((state)=> state.productShop.items)
 
+    useEffect(() => {
+       const local = JSON.parse(localStorage.getItem('cart'))
+       if (local) {
+            
+       }
+    });
+
     const changeCountPlus = (item) => {
         dispatch(addProductCount({id: item.id}))
     }

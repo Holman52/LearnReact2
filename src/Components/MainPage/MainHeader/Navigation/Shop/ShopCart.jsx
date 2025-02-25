@@ -3,11 +3,11 @@ import ButtonShop from "../../../../UI/Button/ButtonShop"
 import './ShopCart.scss'
 import ProductShop from "./ProductShop"
 import { useSelector } from "react-redux"
-import { useState } from "react"
+import {  useState } from "react"
 
 const ShopCart = (props) => {
     const DataProductShop = useSelector((state)=> state.productShop.items)
-    console.log(DataProductShop)
+    console.log(DataProductShop.id)
     let totalCount = 0;
     const HandlerSum = () =>{
         let totalPrice = 0;
@@ -20,6 +20,7 @@ const ShopCart = (props) => {
         totalPrice
      };
     }
+
     const [inputCount, setInputCount] = useState('');
     const changeHandlerCount = (event) => {
     setInputCount(event.target.value)
