@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const shopSlice = createSlice({
     name: 'productShop',
     initialState: {
-    items:  JSON.parse(localStorage.getItem('cart')) || []
+    items:   []
   },
     reducers: {
       addProductShop: (state, action) => {
@@ -17,14 +17,14 @@ const shopSlice = createSlice({
           // Если товара нет в корзине, добавляем его
           state.items.push({ ...action.payload, count: action.payload.count, isLocal: true})
           action.payload.isLocal = true
-          localStorage.setItem('cart' , 'сохранен');
+          localStorage.setItem('cart' , JSON.stringify(state.items));
         }
       },
       removeProductShop: (state, action) => {
         // Удаляем товар из корзины по ID
         state.items = state.items.filter(item => item.id !== action.payload.id)
-        action.payload.isLocal = false
-        localStorage.removeItem('cart' , 'сохранен')
+  
+        localStorage.removeItem('cart' , JSON.stringify(state.items))
       },
       addProductCount: (state, action) =>{
         const product = state.items.find(item => item.id === action.payload.id);
@@ -37,10 +37,16 @@ const shopSlice = createSlice({
           if (product) {
             product.count --;
           }
-      }
+      },
+      loadCart: (state) => {
+        const storedItems = localStorage.getItem('cart');
+        if (storedItems) {
+          state.items = JSON.parse(storedItems);
+        }
+      },
     },
   });
   ;
 
 export default shopSlice.reducer
-export const { addProductShop, removeProductShop,removeProductCount, addProductCount } = shopSlice.actions
+export const { addProductShop, removeProductShop,removeProductCount, addProductCount, loadCart } = shopSlice.actions
