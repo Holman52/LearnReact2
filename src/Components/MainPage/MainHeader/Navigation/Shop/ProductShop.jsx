@@ -35,7 +35,7 @@ const ProductShop = (props) =>{
        
         {DataProductShopCount.map((item) =>(
             <React.Fragment>
-                (<div className="card_shop-product">
+                <div className="card_shop-product">
                 <div className="shop_img_shop"><img src={item.url} alt={item.id} className="shop_img_shop"/></div>
                         <div className="shop_text-food">
                             <div className="shop_delivery">
@@ -72,7 +72,7 @@ const ProductShop = (props) =>{
                         <ButtonBuy className='btn-buy' onClick={() => changeCountMin(item)}>-</ButtonBuy>
                     </div>
                 </div>
-                </div>)
+                </div>
             </React.Fragment>))}
         </div> 
 
